@@ -18,3 +18,4 @@ int main()
 		system((pre+icommand).c_str());
 	}
 }
+
