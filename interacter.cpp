@@ -4,12 +4,13 @@
 using namespace std;
 int main()
 {
+	const int line_length=200;
 	string pre="powershell -Command ";
-	char icommand[100];
+	char icommand[line_length];
 	while(true)
 	{
 		cout<<">>>";
-		cin.getline(icommand,100);
+		cin.getline(icommand,line_length);
 		if (strcmp(icommand,"exit")==0)
 		{
 			cout << "bye" << endl;
@@ -18,4 +19,5 @@ int main()
 		system((pre+icommand).c_str());
 	}
 }
+
 
