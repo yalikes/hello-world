@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 using namespace std;
+int universe=42;
 int main()
 {
 	ifstream in("file_open.cpp");
