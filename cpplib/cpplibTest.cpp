@@ -1,10 +1,14 @@
 #include"cpplib.h"
+#include"clib.h"
 #include<iostream>
 #include<fstream>
 using namespace std;
 int main(int argc,char** argv)
 {
     Stash int_stash;
+    CStash s;
+    cout<<"sizeof Stash is"<<sizeof(int_stash)<<endl;
+    cout<<"sizeof CStash is"<<sizeof(s)<<endl;
     int_stash.initialize(sizeof(int));
     for(int i=0;i<100;i++)
     {
