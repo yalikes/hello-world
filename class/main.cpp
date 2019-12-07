@@ -1,19 +1,22 @@
 #include<iostream>
-#include<cstdlib>
-#include"stash2.h"
+#include<fstream>
+#include"stack3.h"
 using namespace std;
+
 int main(int argc,char** args)
 {
-	Stash int_stash(sizeof(int));
-	for(int i=0;i<100;i++)
+	ifstream in("main.cpp");
+	Stack string_s;
+	string line;
+	while(getline(in,line))
 	{
-		int tem=rand()%100;;
-		int_stash.add(reinterpret_cast<unsigned char*>(&tem));
+		string_s.push(new string(line));
 	}
-	for(int i=0;i<int_stash.count();i++)
+	string* s;
+	while((s=(string*)string_s.pop())!=nullptr)
 	{
-		cout<<"fetch("<<i<<")="<<*reinterpret_cast<int*>
-		(int_stash.fetch(i))<<endl;
+		cout<<*s<<endl;
+		delete s;
 	}
 	return 0;
 }
