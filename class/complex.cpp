@@ -37,8 +37,10 @@ double paohui::complex::amplitude()
 }
 paohui::complex& paohui::complex::operator*=(complex a)
 {
-    re=re*a.real()-im*a.imag();
-    im=re*a.imag()+im*a.real();
+    double t_re=re;
+    double t_im=im;
+    re=t_re*a.real()-t_im*a.imag();
+    im=t_re*a.imag()+t_im*a.real();
     return *this;
 }
 paohui::complex& paohui::complex::operator/=(complex z)
